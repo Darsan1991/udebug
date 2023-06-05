@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 namespace DGames.DDebug
@@ -36,7 +35,7 @@ namespace DGames.DDebug
         }
 
 #if UNITY_EDITOR
-        [MenuItem("MyGames/Debug/Settings")]
+        [UnityEditor.MenuItem("MyGames/Debug/Settings")]
         public static void Open()
         {
             ScriptableEditorUtils.OpenOrCreateDefault<UDebugSettings>();
