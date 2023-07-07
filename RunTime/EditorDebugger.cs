@@ -20,7 +20,7 @@ namespace DGames.DDebug
     {
         [SerializeField] protected DebuggerSettings settings;
 
-        public void Debug(string message, Object context, params string[] tags)
+        public virtual void Debug(string message, Object context, params string[] tags)
         {
             if (tags.Any() && settings.IsTagsAllowed(tags))
                 return;
@@ -33,7 +33,7 @@ namespace DGames.DDebug
         protected virtual string BuildString(string message, Object context, params string[] tags)
         {
             var tagsString = $"[{string.Join(',', tags)}]";
-            return $"{message} " + (context ? "- {context.name}" : "") + tagsString;
+            return $"{message} " + (context ? $"- {context.name}:" : ":") + tagsString;
         }
 
     }

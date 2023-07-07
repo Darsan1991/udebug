@@ -7,8 +7,7 @@ namespace DGames.DDebug
 {
     public class UDebugSettings : ScriptableObject
     {
-        public static UDebugSettings Default => Resources.Load<UDebugSettings>(DEFAULT_NAME);
-        public const string DEFAULT_NAME = nameof(UDebugSettings);
+        public static UDebugSettings Default => Resources.Load<UDebugSettings>(nameof(UDebugSettings));
 
         [SerializeField] private List<PlatformDebuggers> _debuggers = new();
 
